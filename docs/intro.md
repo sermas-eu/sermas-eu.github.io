@@ -14,6 +14,8 @@ Get started by **setting up the Toolkit**.
 
 We use containers to deliver the ready-to-use serivces.
 
+Ensure you have installed
+
 - [Docker](https://docs.docker.com/engine/install/)
 - [Docker compose](https://docs.docker.com/compose/install/)
 
