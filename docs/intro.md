@@ -24,7 +24,7 @@ Ensure you have installed
 Obtain a copy of the SERMAS Toolkit API deployment files
 
 ```sh
-git clone https://github.com/sermas-organization/sermas-toolkit-api
+git clone https://github.com/sermas-eu/sermas-toolkit-api
 cd sermas-toolkit-api
 ```
 
