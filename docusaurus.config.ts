@@ -40,7 +40,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/sermas-eu/sermas-eu.github.io/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/sermas-eu/sermas-eu.github.io/sidebar.ts',
         },
         blog: false,
         // blog: {
