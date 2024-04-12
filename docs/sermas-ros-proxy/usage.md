@@ -9,7 +9,14 @@ The proxy node exchanges and converts the messages between the SERMAS toolkit an
 - subscribing to the SERMAS toolkit topics and publishing on the relative topic in ROS 
 - subscribing to the ROS topics and publishing on the relative topics of the SERMAS toolkit 
 
-To use it, just add the APP ID and the client credentials in the `docker-compose.yaml` file and run it with:
+To start it, clone the repository:
+
+```sh
+git clone https://github.com/sermas-eu/sermas-ros-proxy
+cd sermas-ros-proxy
+```
+
+Edit the `docker-compose.yaml` file adding the APP ID and the client credentials and run it with:
 
 ```sh
 docker compose up
