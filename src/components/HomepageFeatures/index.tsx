@@ -10,17 +10,6 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'XR',
-    path: require('@site/static/img/xr.png').default,
-    description: (
-      <>
-        Extended Reality (XR) is an umbrella term used to describe all immersive technologies that blend
-        the physical and digital worlds, including augmented reality (AR), virtual reality (VR)
-        and mixed reality (MR).
-      </>
-    ),
-  },
-  {
     title: 'SERMAS TOOLKIT',
     path: require('@site/static/img/sermas-toolkit.png').default,
     description: (
@@ -36,6 +25,15 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         The SERMAS XR Agent is software that acts on a user's or other systems' behalf.
+      </>
+    ),
+  },
+  {
+    title: 'Intelligent Assistant',
+    path: require('@site/static/img/xr.png').default,
+    description: (
+      <>
+        SERMAS provides an intelligent assistant capable of supporting in many different tasks.
       </>
     ),
   },
