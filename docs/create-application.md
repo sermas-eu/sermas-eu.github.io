@@ -4,7 +4,7 @@ sidebar_position: 0.002
 
 # Create an application
 
-To create an application, we are going to use the [SERMAS CLI](./sermas-cli)
+To create an application, we are going to use the [SERMAS CLI](./sermas-cli/setup)
 
 Let's create a commodity alias for `sermas-cli`. It uses our same system user ID to avoid file permission issues.
 
@@ -16,7 +16,9 @@ alias "sermas-cli=docker compose run --rm -it --user `echo $UID` cli"
 
 Use the following command and use the configured password (`admin` is the default).
 
-`sermas-cli auth login admin`
+```sh
+sermas-cli auth login admin
+```
 
 ## Create an application template
 
@@ -49,14 +51,13 @@ apps/
     ├── repository.yaml
     ├── settings.yaml
     ├── tools.yaml
-    └── users.yaml
 ```
 
 We'll learn more about the app structure later.
 
 Let's create the application in the SERMAS API with 
 
-```
+```sh
 sermas-cli app save /apps/myapp
 ```
 
