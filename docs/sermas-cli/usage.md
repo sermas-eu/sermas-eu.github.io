@@ -55,7 +55,7 @@ sidebar_position: 20
 
 #### Options:
 - `-V, --version` output the version number
-- `-l, --log-level &lt;level&gt;` Set log level (choices: &quot;error&quot;, &quot;warn&quot;, &quot;info&quot;, &quot;http&quot;, &quot;verbose&quot;, &quot;debug&quot;, &quot;silly&quot;, default: &quot;info&quot;, env: LOG_LEVEL)
+- `-l, --log-level <level>` Set log level (choices: &quot;error&quot;, &quot;warn&quot;, &quot;info&quot;, &quot;http&quot;, &quot;verbose&quot;, &quot;debug&quot;, &quot;silly&quot;, default: &quot;info&quot;, env: LOG_LEVEL)
 - `-j, --json` Return as JSON output. This option will disable interactive prompts. (env: OUTPUT_JSON)
 - `-y, --yaml` Return as YAML output. This option will disable interactive prompts. (env: OUTPUT_YAML)
 - `-o, --output [format]` Return as parsable output. This option will disable interactive prompts. (choices: &quot;json&quot;, &quot;yaml&quot;, preset: &quot;json&quot;, env: OUTPUT)
@@ -67,31 +67,28 @@ sidebar_position: 20
 - `app` manage applications
 - `docs-gen` generate markdown documentation
 - `completion` generate bash completion
-- `help [command]` display help for command
 
 ### <a name="sermas-cli--app"></a>Manage applications
 `sermas-cli app [options] [command]`
 
 #### Commands:
-- `update &lt;path&gt;` Update an new application
-- `sub &lt;topic...&gt;` Subscribe to a topic
+- `update <path>` Update an new application
+- `sub <topic...>` Subscribe to a topic
 - `select [appId]` Select an application
 - `save [options] [name]` Create a new application
 - `remove [options] [appId]` Delete an application
-- `init [options] &lt;path&gt;` Create a new application structure
+- `init [options] <path>` Create a new application structure
 - `chat [options] [appId] [sessionId]` Chat with an agent
 - `token` manage applications token
 - `admin` administer applications
-- `help [command]` display help for command
 
 ### <a name="sermas-cli--app--admin"></a>Administer applications
 `sermas-cli app admin [options] [command]`
 
 #### Commands:
-- `remove &lt;appId...&gt;` Delete applications
-- `import [options] &lt;dirpath&gt;` import applications
+- `remove <appId...>` Delete applications
+- `import [options] <dirpath>` import applications
 - `export [options] [filepath]` export applications
-- `help [command]` display help for command
 
 ### <a name="sermas-cli--app--admin--export"></a>Export applications
 `sermas-cli app admin export [options] [filepath]`
@@ -104,12 +101,6 @@ sidebar_position: 20
 - `-n, --filter-name [filterName]` Filter applications with name matching the provided filter
 - `-id, --filter-id [filterName]` Filter applications with id matching the provided filter
 
-### <a name="sermas-cli--app--admin--remove"></a>Delete applications
-`sermas-cli app admin remove [options] <appId...>`
-
-#### Arguments:
-- `appId` Applications ID
-
 ### <a name="sermas-cli--app--admin--import"></a>Import applications
 `sermas-cli app admin import [options] <dirpath>`
 
@@ -121,6 +112,12 @@ sidebar_position: 20
 - `-s, --skip-clients` Skip the update of the authorization clients and only update the application. Defaults to false
 - `-u, --skip-upload` Skip upload of the repository files. Default to false
 - `-f, --filter [filterName]` Import only applications with a directory name matching the provided filter. Provide a list separated by comma.
+
+### <a name="sermas-cli--app--admin--remove"></a>Delete applications
+`sermas-cli app admin remove [options] <appId...>`
+
+#### Arguments:
+- `appId` Applications ID
 
 ### <a name="sermas-cli--app--chat"></a>Chat with an agent
 `sermas-cli app chat [options] [appId] [sessionId]`
@@ -182,7 +179,6 @@ sidebar_position: 20
 
 #### Commands:
 - `get` retrieve an app token
-- `help [command]` display help for command
 
 ### <a name="sermas-cli--app--token--get"></a>Retrieve an app token
 `sermas-cli app token get [options]`
@@ -199,7 +195,6 @@ sidebar_position: 20
 - `whoami [options]` Show the user JWT information
 - `token` retrieve a user token
 - `login [options] [username] [password]` Login and obtain user credentials
-- `help [command]` display help for command
 
 ### <a name="sermas-cli--auth--login"></a>Login and obtain user credentials
 `sermas-cli auth login [options] [username] [password]`
@@ -229,14 +224,12 @@ sidebar_position: 20
 
 #### Commands:
 - `module` manage platform modules
-- `help [command]` display help for command
 
 ### <a name="sermas-cli--platform--module"></a>Manage platform modules
 `sermas-cli platform module [options] [command]`
 
 #### Commands:
 - `add [openapiSpec]` Add or update a platform module
-- `help [command]` display help for command
 
 ### <a name="sermas-cli--platform--module--add"></a>Add or update a platform module
 `sermas-cli platform module add [options] [openapiSpec]`
