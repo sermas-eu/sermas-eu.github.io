@@ -2,7 +2,7 @@
 sidebar_position: 20
 ---
 
-# SERMAS CLI usage
+# Usage
 
 - <a href="#sermas-cli">SERMAS CLI overview</a>
 
