@@ -103,7 +103,15 @@ default language to use if not provided, it will be used to translate messages o
 
 #### IMPORT_USERS_FILENAME 
 
-path to the users.json file e.g. /data/users.json (default: `/data/users.json``)
+path to the users.json file (default: `./users.json`)
+
+#### ADMIN_USER 
+
+default admin username (default: `admin`)
+
+#### ADMIN_PASSWORD 
+
+default admin password (default: `admin`)
 
 
 #### ASYNCAPI_PUBLIC_URL 
@@ -112,12 +120,12 @@ public URL path to mqtt over websocket (default: `/mqtt`)
 
 #### OPENAPI_PUBLIC_URL 
 
-default path to the open api endpoint (default: `/``)
+default path to the open api endpoint (default: `/`)
 
 
 #### MODULES_IMPORT_PATH 
 
-path to the modules.json file e.g. /data/modules.json (default: `/data/modules.json``)
+path to the modules.json file (default: `./modules.json`)
 
 
 #### WAKE_WORDS 
@@ -168,17 +176,21 @@ Embedding service to use (default: `openai`)
 
 Enable binary quantization for embeddings (default: `0`)
 
+#### OPENAI_API_KEY 
+
+OpenAI api key (default: ``)
+
 #### OPENAI_EMBEDDINGS_MODEL 
 
 OpenAi Embedding model (default: `text-embedding-3-small`)
 
 #### OPENAI_CHAT_MODELS 
 
-Supported chat models from OpenAI. Leave empty to allow all available. (default: `gpt-4,gpt-4-turbo,gpt-3.5-turbo,gpt-3.5-turbo-16k`)
+Supported chat models from OpenAI. Leave empty to allow all available. (default: `gpt-4o,gpt-4,gpt-4-turbo,gpt-3.5-turbo,gpt-3.5-turbo-16k`)
 
 #### OPENAI_MODEL 
 
-Default OpenAI model used as fallback (default: `gpt-4`)
+Default OpenAI model used as fallback (default: `gpt-4o`)
 
 
 #### LITELLM_URL 
@@ -196,8 +208,12 @@ Default Ollama model used as fallback (default: `sermas-llama2`)
 
 #### OLLAMA_CHAT_MODELS 
 
-Supported chat models from Ollama. Leave empty to allow all available. (default: `sermas-llama2:latest`)
+Supported chat models from Ollama. Leave empty to allow all available. (default: `sermas-llama2:latest,mistral:latest`)
 
+
+#### GROQ_API_KEY 
+
+Groq api key (default: ``)
 
 #### GROQ_MODEL 
 
@@ -206,6 +222,19 @@ Default Groq model used as fallback (default: `mixtral-8x7b-32768`)
 #### GROQ_CHAT_MODELS 
 
 Supported chat models from Groq. Leave empty to allow all available. (default: `gemma-7b-it,llama2-70b-4096,llama3-70b-8192,llama3-8b-8192,mixtral-8x7b-32768`)
+
+
+#### ANTROPHIC_API_KEY 
+
+Antrophic api key (default: ``)
+
+#### ANTROPHIC_MODEL 
+
+Default Antrophic model used as fallback (default: `claude-3-haiku-20240307`)
+
+#### ANTROPHIC_MODELS 
+
+Supported chat models from Antrophic. Leave empty to allow all available. (default: `claude-3-opus-20240229,claude-3-sonnet-20240229,claude-3-haiku-20240307`)
 
 
 #### DATALOGGER_ENABLED 
