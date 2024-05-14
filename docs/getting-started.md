@@ -38,11 +38,9 @@ OPENAI_API_KEY="..."
 
 ### Configuration
 
-The system can create users at bootstrap from the file `./config/api/user.json`
+A default user with admin privileges (role `platform-admin`) is created by default with username `admin` and password `admin`. Those defaults can be controlled by settings `ADMIN_USER` and `ADMIN_PASSWORD` environment variables.
 
-A default user with admin privileges (role `platform-admin`) is created by default with username `admin` and password `admin`.
-
-You can customize the initial user creation by changing username / password or also adding new users.
+The system can create additional users at bootstrap from the file `./config/api/user.json`
 
 ### Start the system
 
