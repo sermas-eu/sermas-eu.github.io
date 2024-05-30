@@ -8,14 +8,23 @@ To create an application, we are going to use the [SERMAS CLI](./sermas-cli/setu
 
 Let's create a commodity alias for `sermas-cli`. It uses our same system user ID to avoid file permission issues.
 
+If you're using Windows make sure to install and use WSL ([Microsoft's tutorial to install WSL](https://learn.microsoft.com/en-us/windows/wsl/install))
+
+### On Linux
 ```sh
 alias "sermas-cli=docker compose run --rm -it --user `echo $UID` cli"
+```
+
+### On Windows (using WSL console)
+```sh
+alias "sermas-cli=docker compose run --rm -it cli"
 ```
 
 ## Login with the admin user
 
 Use the following command and use the configured password (`admin` is the default).
 
+### Same on Linux and Windows
 ```sh
 sermas-cli auth login admin
 ```
@@ -24,8 +33,14 @@ sermas-cli auth login admin
 
 The CLI uses a directory structure to create and keep updated the application definition. It allows to specify configuration and assets to be uploaded.
 
+### On Linux
 ```sh
 sermas-cli app init /apps/myapp
+```
+
+### On Windows (using WSL console)
+```sh
+sermas-cli app init ./apps/myapp
 ```
 
 The resulting structure is similar to the following
@@ -57,8 +72,14 @@ We'll learn more about the app structure later.
 
 Let's create the application in the SERMAS API with 
 
+### On Linux
 ```sh
 sermas-cli app save /apps/myapp
+```
+
+### On Windows (using WSL console)
+```sh
+sermas-cli app save ./apps/myapp
 ```
 
 You should see a confirmation message. 
