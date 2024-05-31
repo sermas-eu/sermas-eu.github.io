@@ -6,7 +6,7 @@ sidebar_position: 10
 
 The SERMAS CLI offers an interface to manage and configure the SERMAS Toolkit API
 
-**NOTE** Set up the [../intro](SERMAS Toolkit API) first!
+**NOTE** Set up the [SERMAS Toolkit API](../getting-started) first!
 
 
 ## With Docker

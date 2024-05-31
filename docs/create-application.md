@@ -33,14 +33,9 @@ sermas-cli auth login admin
 
 The CLI uses a directory structure to create and keep updated the application definition. It allows to specify configuration and assets to be uploaded.
 
-### On Linux
+### Same on Linux and Windows
 ```sh
 sermas-cli app init /apps/myapp
-```
-
-### On Windows (using WSL console)
-```sh
-sermas-cli app init ./apps/myapp
 ```
 
 The resulting structure is similar to the following
@@ -72,14 +67,9 @@ We'll learn more about the app structure later.
 
 Let's create the application in the SERMAS API with 
 
-### On Linux
+### Same on Linux and Windows
 ```sh
 sermas-cli app save /apps/myapp
-```
-
-### On Windows (using WSL console)
-```sh
-sermas-cli app save ./apps/myapp
 ```
 
 You should see a confirmation message. 
