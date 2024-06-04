@@ -113,7 +113,7 @@ const config: Config = {
           items: [
             {
               label: 'Discord',
-              href: 'https://discord.gg/Avv4TW8Y',
+              href: 'https://discord.gg/ek23WbVNBv',
             },
             {
               label: 'Stack Overflow',
