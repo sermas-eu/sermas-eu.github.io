@@ -237,7 +237,7 @@ Default Antrophic model used as fallback (default: `claude-3-haiku-20240307`)
 Supported chat models from Antrophic. Leave empty to allow all available. (default: `claude-3-opus-20240229,claude-3-sonnet-20240229,claude-3-haiku-20240307`)
 
 
-#### DATALOGGER_ENABLED 
+#### DATASET_ENABLED 
 
 Enable data logging (default: `0`)
 
