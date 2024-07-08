@@ -11,6 +11,9 @@ Let's create a commodity alias for `sermas-cli`. It uses our same system user ID
 If you're using Windows make sure to install and use WSL ([Microsoft's tutorial to install WSL](https://learn.microsoft.com/en-us/windows/wsl/install))
 
 ### On Linux
+
+**NOTE** We assume you can use docker with your user. Add `sudo` to the command if it is not the case e.g. `sudo docker ps`
+
 ```sh
 alias "sermas-cli=docker compose run --rm -it --user `echo $UID` cli"
 ```
@@ -24,7 +27,6 @@ alias "sermas-cli=docker compose run --rm -it cli"
 
 Use the following command and use the configured password (`admin` is the default).
 
-### Same on Linux and Windows
 ```sh
 sermas-cli auth login admin
 ```
@@ -33,7 +35,6 @@ sermas-cli auth login admin
 
 The CLI uses a directory structure to create and keep updated the application definition. It allows to specify configuration and assets to be uploaded.
 
-### Same on Linux and Windows
 ```sh
 sermas-cli app init /apps/myapp
 ```
@@ -67,11 +68,12 @@ We'll learn more about the app structure later.
 
 Let's create the application in the SERMAS API with 
 
-### Same on Linux and Windows
 ```sh
 sermas-cli app save /apps/myapp
 ```
 
 You should see a confirmation message. 
 
-Great, let's see our app at work in the kiosk on [http://localhost:8080](http://localhost:8080)
+The newly created app can be used in the kiosk app on [http://localhost:8080](http://localhost:8080)
+
+In case you received an error, check for errors in the logs with `docker compose logs api`.

@@ -15,6 +15,8 @@ Ensure you have installed
 - [Docker](https://docs.docker.com/engine/install/)
 - [Docker compose](https://docs.docker.com/compose/install/)
 
+**NOTE** The guide assume a Linux Ubuntu/Debian environment. WSL has also been reported to work.
+
 ## Running the Toolkit API
 
 Obtain a copy of the SERMAS Toolkit API deployment files
