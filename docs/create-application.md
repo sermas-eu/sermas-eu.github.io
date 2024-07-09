@@ -10,15 +10,9 @@ Let's create a commodity alias for `sermas-cli`. It uses our same system user ID
 
 If you're using Windows make sure to install and use WSL ([Microsoft's tutorial to install WSL](https://learn.microsoft.com/en-us/windows/wsl/install))
 
-### On Linux
 
 **NOTE** We assume you can use docker with your user. Add `sudo` to the command if it is not the case e.g. `sudo docker ps`
 
-```sh
-alias "sermas-cli=docker compose run --rm -it --user `echo $UID` cli"
-```
-
-### On Windows (using WSL console)
 ```sh
 alias "sermas-cli=docker compose run --rm -it cli"
 ```
