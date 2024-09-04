@@ -35,6 +35,10 @@ sidebar_position: 20
   - <a href="#sermas-cli--app--update">Update an new application</a>
 - <a href="#sermas-cli--auth">Handle users and authentication</a>
 
+  - <a href="#sermas-cli--auth--admin">Manage users</a>
+
+  - <a href="#sermas-cli--auth--admin--import">Import users</a>
+
   - <a href="#sermas-cli--auth--login">Login and obtain user credentials</a>
 
   - <a href="#sermas-cli--auth--token">Retrieve a user token</a>
@@ -42,6 +46,9 @@ sidebar_position: 20
   - <a href="#sermas-cli--auth--whoami">Show the user JWT information</a>
 - <a href="#sermas-cli--completion">Generate bash completion</a>
 
+- <a href="#sermas-cli--dialogue">Interact with dialogue models</a>
+
+  - <a href="#sermas-cli--dialogue--models">List available models</a>
 - <a href="#sermas-cli--docs-gen">Generate markdown documentation</a>
 
 - <a href="#sermas-cli--platform">Manage platform</a>
@@ -49,6 +56,11 @@ sidebar_position: 20
   - <a href="#sermas-cli--platform--module">Manage platform modules</a>
 
   - <a href="#sermas-cli--platform--module--add">Add or update a platform module</a>
+- <a href="#sermas-cli--session">Handle sessions</a>
+
+  - <a href="#sermas-cli--session--history">Retrieve a chat history by session ID</a>
+
+  - <a href="#sermas-cli--session--search">Retrieve a chat history by app ID</a>
 
 ### Manage and interact with the SERMAS Toolkit API
 `sermas-cli [options] [command]`
@@ -62,7 +74,9 @@ sidebar_position: 20
 
 
 #### Commands:
+- `session` handle sessions
 - `platform` manage platform
+- `dialogue` interact with dialogue models
 - `auth` handle users and authentication
 - `app` manage applications
 - `docs-gen` generate markdown documentation
@@ -112,6 +126,7 @@ sidebar_position: 20
 - `-s, --skip-clients` Skip the update of the authorization clients and only update the application. Defaults to false
 - `-u, --skip-upload` Skip upload of the repository files. Default to false
 - `-f, --filter [filterName]` Import only applications with a directory name matching the provided filter. Provide a list separated by comma.
+- `-iw, --import-websites` Import RAG scraping the website list in the app configuration
 
 ### <a name="sermas-cli--app--admin--remove"></a>Delete applications
 `sermas-cli app admin remove [options] <appId...>`
@@ -195,6 +210,19 @@ sidebar_position: 20
 - `whoami [options]` Show the user JWT information
 - `token` retrieve a user token
 - `login [options] [username] [password]` Login and obtain user credentials
+- `admin` manage users
+
+### <a name="sermas-cli--auth--admin"></a>Manage users
+`sermas-cli auth admin [options] [command]`
+
+#### Commands:
+- `import <file>` import users
+
+### <a name="sermas-cli--auth--admin--import"></a>Import users
+`sermas-cli auth admin import [options] <file>`
+
+#### Arguments:
+- `file` A file with the list of users to import
 
 ### <a name="sermas-cli--auth--login"></a>Login and obtain user credentials
 `sermas-cli auth login [options] [username] [password]`
@@ -217,6 +245,14 @@ sidebar_position: 20
 
 ### <a name="sermas-cli--completion"></a>Generate bash completion
 `sermas-cli completion [options]`
+### <a name="sermas-cli--dialogue"></a>Interact with dialogue models
+`sermas-cli dialogue [options] [command]`
+
+#### Commands:
+- `models` List available models
+
+### <a name="sermas-cli--dialogue--models"></a>List available models
+`sermas-cli dialogue models [options]`
 ### <a name="sermas-cli--docs-gen"></a>Generate markdown documentation
 `sermas-cli docs-gen [options]`
 ### <a name="sermas-cli--platform"></a>Manage platform
@@ -236,3 +272,32 @@ sidebar_position: 20
 
 #### Arguments:
 - `openapiSpec` Module Open API specification URL
+
+### <a name="sermas-cli--session"></a>Handle sessions
+`sermas-cli session [options] [command]`
+
+#### Commands:
+- `search [options] [appId]` Retrieve a chat history by app ID
+- `history [appId] [sessionId]` Retrieve a chat history by session ID
+
+### <a name="sermas-cli--session--history"></a>Retrieve a chat history by session ID
+`sermas-cli session history [options] [appId] [sessionId]`
+
+#### Arguments:
+- `appId` The appId reference
+- `sessionId` The sessionId to retrieve
+
+### <a name="sermas-cli--session--search"></a>Retrieve a chat history by app ID
+`sermas-cli session search [options] [appId]`
+
+#### Arguments:
+- `appId` The appId reference
+
+
+#### Options:
+- `-l, --limit [limit]` Limit the number of results. Defaults to 10 (default: &quot;10&quot;)
+- `--from [from]` From date
+- `--to [to]` To date
+- `-d, --dump [path]` Export session contents as yaml files to path
+- `-f, --dump-format [format]` history format (raw or simple). Default to simple (default: &quot;simple&quot;)
+- `-p, --print` print history to screen (default: false)
