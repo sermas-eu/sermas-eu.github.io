@@ -34,7 +34,7 @@ ollama pull nomic-embed-text
 Locate the file `./data/api/.env` and add the following configurations
 
 ```ini
-OLLAMA_URL=http://172.17.0.1:11434
+OLLAMA_BASEURL=http://172.17.0.1:11434
 
 OLLAMA_MODEL=phi3
 OLLAMA_CHAT_MODELS=phi3:*
