@@ -47,6 +47,13 @@ LLM_EMBEDDINGS_SERVICE=ollama
 
 then restart the api with `docker compose restart api`
 
+> NOTE: The `OLLAMA_BASEURL` above may change based on your operating system and ollama installation.  
+The example above assumes a standard installation on a linux machine and uses `172.17.0.1` as the default gateway between the docker network and the host (`host.docker.internal` on MacOS and Windows) . `localhost` and `127.0.0.1` will typically **NOT** work. 
+
+> **IMPORTANT: Ollama must be listening to all local interfaces**. By default a standard ollama installation will listen to `localhost` and `127.0.0.1`, both unreachable from a 
+docker container. To fix this, set `OLLAMA_HOST=0.0.0.0`. See [here](https://github.com/ollama/ollama/issues/703) for more details
+
+
 ### Configuring the application settings
 
 In settings.yaml or app.yaml settings section add the following lines
