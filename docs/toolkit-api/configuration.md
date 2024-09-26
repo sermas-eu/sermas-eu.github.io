@@ -198,7 +198,7 @@ Default OpenAI model used as fallback (default: `gpt-4o`)
 LiteLLM endpoint URL (default: `http://litellm`)
 
 
-#### OLLAMA_URL 
+#### OLLAMA_BASEURL 
 
 Url to Ollama (default: `http://ollama:11434`)
 

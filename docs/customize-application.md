@@ -75,8 +75,14 @@ background: milkyway
 # It will be also used to translate conversation as needed
 language: en-GB
 
-# LLM provider, defaults to OpenAI
-llm: default
+# LLM provider and models for each functionality
+llm:
+  chat: openai/gpt-4o
+  tools: openai/gpt-4o
+  sentiment: openai/gpt-4o-mini
+  tasks: openai/gpt-4o-mini
+  intent: openai/gpt-4o
+  translation: openai/gpt-4o-mini
 
 # default avatar prompt, this will be used as baseline in conversations.
 # This prompt defines the overall direction of the conversation along with the avatar specific prompt
