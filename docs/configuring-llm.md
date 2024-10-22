@@ -31,7 +31,7 @@ ollama pull nomic-embed-text
 
 ### Configure the SERMAS Toolkit API
 
-Locate the file `./data/api/.env` and add the following configurations
+Locate the file `./config/api/.env` and add the following configurations
 
 ```ini
 OLLAMA_BASEURL=http://172.17.0.1:11434
