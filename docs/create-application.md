@@ -12,9 +12,17 @@ If you're using Windows make sure to install and use WSL ([Microsoft's tutorial 
 
 
 **NOTE** We assume you can use docker with your user. Add `sudo` to the command if it is not the case e.g. `sudo docker ps`
+## Create a command alias
+The alias `sermas-cli` will be used for all following commands
 
+### On Windows
 ```sh
 alias "sermas-cli=docker compose run --rm -it cli"
+```
+### On Linux
+On Linux we must run docker commands using our user id (not root) in order to own the generated files and folders.
+```sh
+alias "sermas-cli=docker compose run --user `id -u` --rm -it cli"
 ```
 
 ## Login with the admin user
