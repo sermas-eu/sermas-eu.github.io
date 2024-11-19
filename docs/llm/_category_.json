@@ -1,0 +1,8 @@
+{
+  "label": "LLM configuration",
+  "position": 0.000010,
+  "link": {
+    "type": "generated-index",
+    "description": "LLM provider configurations"
+  }
+}
