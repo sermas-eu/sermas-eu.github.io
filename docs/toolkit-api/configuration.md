@@ -4,7 +4,7 @@ sidebar_position: 10
 
 # Configuration
 
-The Toolkit API can be  configured using different sets of environment variables
+The Toolkit API can be configured using different sets of environment variables
 
 #### IMPORT_USER 
 

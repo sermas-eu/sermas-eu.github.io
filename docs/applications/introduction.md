@@ -4,7 +4,7 @@ sidebar_position: 0.002
 
 # Introduction
 
-An application (or app) wraps togheter the configuration for different components available in the SERMAS Toolkit.
+An application (or app) wraps together the configuration for different components available in the SERMAS Toolkit.
 
 ## Application details
 
