@@ -2,7 +2,7 @@
 sidebar_position: 0.002
 ---
 
-# What is an application
+# Introduction
 
 An application (or app) wraps togheter the configuration for different components available in the SERMAS Toolkit.
 
