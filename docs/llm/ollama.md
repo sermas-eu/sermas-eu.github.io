@@ -1,22 +1,14 @@
 ---
-sidebar_position: 0.008
+sidebar_position: 0.00020
 ---
 
-# Configuring LLMs
-
-Follow some guidance to configure different LLM providers from those supported. 
-
-See also [the default configuration](https://github.com/sermas-eu/sermas-api/blob/main/libs/sermas/sermas.defaults.ts) that can be overridden with environment variables.
-
-If you followed the getting started guide, ensure you have the latest images with `docker compose pull`
-
-## Configuring Ollama
+# Ollama
 
 Let's setup a local LLMs service to run inference.
 
 ***NOTE*** The LLM may use the GPU to improve performance, however the available resources may not be enough to complete all the requests. 
 
-### Start ollama
+## Start ollama
 
 See the [ollama docs](https://ollama.com/) to start the service and obtain a model. 
 
@@ -29,7 +21,7 @@ ollama pull phi3
 ollama pull nomic-embed-text
 ```
 
-### Configure the SERMAS Toolkit API
+## Configure the SERMAS Toolkit API
 
 Locate the file `./config/api/.env` and add the following configurations
 
@@ -54,7 +46,7 @@ The example above assumes a standard installation on a linux machine and uses `1
 docker container. To fix this, set `OLLAMA_HOST=0.0.0.0`. See [here](https://github.com/ollama/ollama/issues/703) for more details
 
 
-### Configuring the application settings
+## Configuring the application settings
 
 In settings.yaml or app.yaml settings section add the following lines
 
@@ -72,7 +64,7 @@ The pattern to follow is `[provider]/[model]`. The list of available models is v
 
 This allow to select the phi3 model for all the types of inference in the system. Depending on the setup, those could be changed to work with different providers and models configured.
 
-### Updating the application
+## Updating the application
 
 Reimport the app from the CLI `sermas-cli app save /apps/myapp`
 
