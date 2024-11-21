@@ -71,7 +71,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Documentation',
         },
         // {to: '/blog', label: 'Blog', position: 'left'},
         {
@@ -104,7 +104,7 @@ const config: Config = {
           items: [
             {
               label: 'Getting started',
-              to: '/docs/getting-started',
+              to: '/docs/category/overview',
             },
           ],
         },
@@ -132,6 +132,10 @@ const config: Config = {
             //   label: 'Blog',
             //   to: '/blog',
             // },
+            {
+              label: 'About SERMAS Project',
+              href: 'https://sermasproject.eu/',
+            },
             {
               label: 'GitHub',
               href: 'https://github.com/sermas-eu',

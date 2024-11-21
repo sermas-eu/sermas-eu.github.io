@@ -4,7 +4,7 @@ sidebar_position: 0.002
 
 # Create an application
 
-To create an application, we are going to use the [SERMAS CLI](./sermas-cli/setup)
+To create an application, we are going to use the [SERMAS CLI](../sermas-cli/setup)
 
 Let's create a commodity alias for `sermas-cli`. It uses our same system user ID to avoid file permission issues.
 

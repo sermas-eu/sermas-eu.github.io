@@ -2,9 +2,13 @@
 sidebar_position: 0.006
 ---
 
-# Customizing the application
+# CLI management
 
-The application folder is composed of differents parts and we are going to cover them in this page
+The SERMAS CLI offer a simplified method to handle an application.
+
+The CLI takes care of syncing with the API based on the directory structure and can be used to manage and update common parts of the application.
+
+An application folder is composed of differents parts and we are going to cover them in this page
 
 Definition can be in `JSON` (.json) or `YAML` (.yaml, .yml)
 

@@ -2,7 +2,7 @@
 sidebar_position: 0.001
 ---
 
-# Getting Started
+# System setup
 
 Let's discover **SERMAS in ~10 minutes**.
 
