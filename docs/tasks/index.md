@@ -7,8 +7,9 @@ sidebar_position: 0.000022
 
 LLM based tasks allow to create conversational flows to collect information from the user.
 
+A task can be aborted by the user upon explicit request or by providing indication they want to leave the interaction context.
 
-## Task definition
+# Task definition
 
 ```yaml
 appId: reference app ID
@@ -20,7 +21,7 @@ the user can take an appoitnment with offices handling finacial or shipping topi
 
 ```
 
-### Intents
+## Intents
 
 Tasks are matched from the dialogue interactions via intent detection wiht LLM.
 
@@ -37,7 +38,7 @@ The agent will also try to propose a task to the user based on the context and t
 
 ```
 
-### Events
+## Events
 
 Events are triggered during the task execution and they could be one of the following
 
@@ -66,38 +67,28 @@ Events are triggered during the task execution and they could be one of the foll
       # tool/ prefix will trigger a tool, passing the task field values as tool values
       - name: tool/send-email
 ```
+## Fields
 
-## Example
+Task collect information trough fields. Based on the field configuration the agent will ask for specific information to the user and process it accordingly.
+
+Fields can be configured using those properties
+
+`name` a name for the value e.g. fullname or address
+
+
+### Field type
+
+The `type` property allow to change the behavours of the agent collecting a value. Supported types are:
+
+- `text` expect a textual input
+- `date` expect an interpretable date input
+- `boolean` expect an explicit confirmation such as yes or no
+- `select` expect the user to select one of the available 
+- `external` does nothing explicitly and delegate the handling to an exernal interface
+
+
 
 ```yaml
-- appId: poa
-  name: poa-take-appointment
-  description: Prendere appuntamento con un consulente finanziario
-  label: Appuntamento con un consulente finanziario
-  hint: |
-    Questo task permette di selezionare una data in base alle disponibilita' in calendario di un consulente finanziaro. 
-    Al termine l'utente riceve un codice per l'appuntamento. In caso non si possible fissare l'appuntamento, chiedi all'utente se vuole un ticket per lo sportello.
-
-  intents:
-  - name: conto-corrente
-    description: richieste di apertura, chiusura o risoluzione problemi su conti corrente o bancoposta
-  - name: mutuo
-    description: richiesta di apertura mutuo
-  - name: consultant-appointment
-    description: richiesta esplicita di appuntamento con consulente finanziario
-
-  events:
-    - type: completed
-      message: Il tuo appuntamento e' stato registrato.
-      # condition: service-type IS 'Finanziario' AND confirm IS true AND date IS valid date
-      condition: service-type IS 'Finanziario' AND date IS a readable date
-    - type: completed
-      message: Per completare la tua richiesta parla con un operatore allo sportello
-      condition: service-type NOT 'Finanziario' OR date IS NOT a readable date
-      # condition: service-type NOT 'Finanziario' OR confirm IS false OR date IS NOT valid date
-      trigger: 
-      - name: task/poa-get-ticket
- 
   fields:
  
     - name: reason
