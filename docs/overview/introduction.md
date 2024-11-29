@@ -4,7 +4,7 @@ sidebar_position: 0.0002
 
 # Introduction
 
-SERMAS focus on developing methods and tools to help future XR systems be socially accepted. 
+SERMAS focuses on developing methods and tools to help future XR systems be socially accepted. 
 
 Our take on XR systems is open ended and focusing on components to enable interaction with intelligent virtual or robotic agents
 
@@ -20,7 +20,7 @@ The SERMAS Methodology helps XR engineers who, assisted by security analysts and
 ### SERMAS Agent
 The SERMAS Agent combines hardware, software, and algorithmic modules to implement an XR model and create personalised XR systems. It is also for non-specialised users.
 
-### Ppen natural language generation
+### Open natural language generation
 The Agent accesses visual and language information and communicates with users using verbal and non-verbal signals. 
 The SERMAS team will evaluate the model's ability to generate appropriate responses using automatic and human-based metrics.
 
