@@ -74,61 +74,73 @@ Task collect information trough fields. Based on the field configuration the age
 Fields can be configured using those properties
 
 `name` a name for the value e.g. fullname or address
-
+`condition` evaluate a condition in the context of a task, if the condition is not met the field will be skipped. e.g. `reason is not empty`
 
 ### Field type
 
 The `type` property allow to change the behavours of the agent collecting a value. Supported types are:
 
 - `text` expect a textual input
+- `eval` evaluate a condition based on the context
 - `date` expect an interpretable date input
 - `boolean` expect an explicit confirmation such as yes or no
 - `select` expect the user to select one of the available 
-- `external` does nothing explicitly and delegate the handling to an exernal interface
+- `external` delegate handling to an exernal integration
 
+#### Eval example
 
+Eval return a boolean value based on `prompt`. Placeholder available are `{history}` for the chat history and any field value in the task e.g. `{my-task-field}`
 
 ```yaml
   fields:
- 
-    - name: reason
+     - name: reason
       type: eval
       required: true
       prompt: |
         Extract the reason of the appointment for the user, based on the HISTORY messages.
         HISTORY: 
         {history}
- 
+
     - name: service-type
       type: eval
       required: true
       prompt: | 
-        Return the 'name' field of one of SERVICES, matching with the USER request:
-        - { name: "Finanziario", description: "richieste relative a mutui, conti correnti, bancoposta,finanziamenti e appuntamento con consulente" }
-        - { name: "Telefonia", description: "ricariche telefoniche e gestione sim" }
-        - { name: "Spedizioni", description: "spedizioni e gestione pacchi o corrispondenza" }
+        Return the 'name' field of one of the following services, matching with the USER request:
+        - { name: "Financial", description: "talk about money" }
+        - { name: "Shipping", description: "about shipping" }
+        - { name: "Support", description: "any other aspect" }
         - Altro
         USER: {reason}
+```
 
+#### Date example
+
+The date type accept a date as provided by the user
+
+```yaml
     - name: date
-      condition: "service-type == 'Finanziario'"
-      label: Seleziona una data dal calendario
-      type: external
+      condition: "service-type == 'Financial'"
+      label: Provide your date of birth
+      type: date
       required: true
-      handler: select-calendar
       hint: |
-        Offre una lista di date dal calendario in base alla disponibilita' del consulente. 
-        L'utente non puo' chiedere date diverse e non e' possibile offrire altre date.
- 
-    # - name: confirm
-    #   condition: "service-type == 'Finanziario' and date is a valid date"
-    #   type: boolean
-    #   label: Vuoi confermare ?
-    #   required: true
-    #   options:
-    #     - label: Confermo
-    #       value: true
-    #     - label: 'Cancella'
-    #       value: false
- 
+        User should provide their date of birth. Ensure it's complete and reasonable (e.g. not earlier than 1940)
+ ```
+
+### Select example
+
+Used to ask a direct question to the user, the user must choose one of the options
+
+```yaml
+- name: confirm
+  type: select
+  label: Which color
+  required: true
+  options:
+    - label: Red
+      value: dark-red
+    - label: Blue
+      value: light-blue
+    - label: Yellow
+      value: yellow
 ```
