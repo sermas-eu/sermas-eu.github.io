@@ -16,7 +16,7 @@ The MQTT broker endpoint is reachable at http://localhost:8080/mqtt after starti
 
 ## Authentication
 
-You will need a valid authentication token to connect to the MQTT broker (see [RESTful API](resftul-api)).
+You will need a valid authentication token to connect to the MQTT broker (see [RESTful API](restful-api)).
 The MQTT password is just a placeholder: any non-empty string will work.
 
 ```python
