@@ -18,13 +18,13 @@ To serve the kiosk on the network or over a website, we need to add some additio
 
 Follow the configuration needed to serve from an IP in the local network. We will use `sermas.lan` as a placeholder (but could be an IP).
 
-- `PRIVATE_API_BASE_URL=http://sermas.lan/api`
+- `PRIVATE_API_BASE_URL=http://sermas.lan:8080/api`
 
-- `PUBLIC_API_BASE_URL=http://sermas.lan/api`
-- `PUBLIC_AUTH_URL=http://sermas.lan/keycloak`
+- `PUBLIC_API_BASE_URL=http://sermas.lan:8080/api`
+- `PUBLIC_AUTH_URL=http://sermas.lan:8080/keycloak`
 
-- `PUBLIC_MQTT_BASE_URL=sermas.lan`
-- `PUBLIC_TOOLKIT_URL=http://sermas.lan`
+- `PUBLIC_MQTT_BASE_URL=sermas.lan:8080`
+- `PUBLIC_TOOLKIT_URL=http://sermas.lan:8080`
 
 **Note** The kiosk on a local network should still run in `localhost` to ensure microphone and camera access. Alternatively, the system should be exposed on the web over https.
 
