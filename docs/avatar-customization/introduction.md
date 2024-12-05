@@ -15,7 +15,7 @@ Choose one of these options to create a personalized avatar model:
 
 ### Load the model
 
-The `.glb` file must be placed in a folder under `repository/avatars`, followed by a `.yaml` file describing the content (see [repository documentation](/docs/applications/cli-handling#avatars)). 
+The GLB file must be placed in a folder under `repository/avatars`, followed by a `.yaml` file describing the content (see [repository documentation](/docs/applications/cli-handling#avatars)). 
 Here an example of the resulting folder structure:
 
 ```
@@ -23,6 +23,5 @@ Here an example of the resulting folder structure:
 │   ├── marco
 │   │   ├── avatar.glb
 │   │   └── avatar.glb.yaml
-
 ```
 Then update the application with the new model (see [application creation](/docs/getting-started/create-application#create-an-application-template)).

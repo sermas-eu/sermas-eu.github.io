@@ -1,5 +1,5 @@
 ---
-sidebar_position: 0.0002
+sidebar_position: 0.0003
 ---
 
 # 3Dify models
