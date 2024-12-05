@@ -4,6 +4,10 @@ sidebar_position: 0.0002
 
 # ReadyPlayerMe models
 
+ReadyPlayerMe has a web interface for creating a custom avatar.
+Users can choose between thousands of customization options to create an avatar that represents their identity best.
+These avatars will then be served as fully skinned, rigged, and ready-to-animate 3D models.
+
 To start, go to [readyplayer.me](https://readyplayer.me) and click on the button:
 
 ![alt text](/img/rpm/rpm1_crop.png "Title")
