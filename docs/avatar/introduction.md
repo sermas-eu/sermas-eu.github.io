@@ -8,8 +8,8 @@ It is possible to customize the avatar by creating a new model and loading it in
 ### Create a model
 We provide two options to create a personalized avatar model compatible with the SERMAS toolkit:
 
-- [ReadyPlayerMe](rpm-models)
-- [3Dify](3Dify)
+- [ReadyPlayerMe](./rpm-models)
+- [3Dify](./3dify/introduction)
 
 A third options might be to build the model from scratch.
 The current version of Avatar uses readyplayer.me (RPM) models to render the avatar.

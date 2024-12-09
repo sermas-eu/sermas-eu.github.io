@@ -1,8 +1,8 @@
 ---
-sidebar_position: 10
+sidebar_position: 0.010
 ---
 
-# Configuration
+# API variables
 
 The Toolkit API can be configured using different sets of environment variables
 
