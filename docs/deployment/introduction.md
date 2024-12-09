@@ -30,7 +30,7 @@ Follow the configuration needed to serve from an IP in the local network. We wil
 
 ## API configuration
 
-Read here for the [API env configurations](/docs/toolkit-api/configuration) options
+Read here for the [API env configurations](./api.md) options
 
 
 ## Securing the setup

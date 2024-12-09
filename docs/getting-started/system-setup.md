@@ -37,7 +37,7 @@ OPENAI_API_KEY="..."
 
 **NOTE** OpenAI offers a free tier but for frequent usage you may need to setup a billing account. 
 
-SERMAS supports different LLMs backend. See the documentation in the [LLMs section](/docs/llm/introduction).
+SERMAS supports different LLMs backend. See the documentation in the [LLMs section](../agent/llm/introduction).
 
 ### Configuration
 
