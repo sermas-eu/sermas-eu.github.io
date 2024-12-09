@@ -25,6 +25,21 @@ On Linux we must run docker commands using our user id (not root) in order to ow
 alias "sermas-cli=docker compose run --user `id -u` --rm -it cli"
 ```
 
+#### Solving permissions issues
+
+It may happens that some directories get created with `root` ownership by docker and this causes your user to not being able to access them anymore.
+
+You may notice errors like those 
+
+- `error: Failed to write file /data/cli.json: EACCES: permission denied, open '/data/cli.json'`
+- `error: Failed to create template EACCES: permission denied, mkdir '/apps/myapp'`
+
+To fix those errors, set ownership of CLI related folders to your current user. E.g.
+
+```sh
+sudo chown -R `id -u` ./apps ./data/cli
+```
+
 ## Login with the admin user
 
 Use the following command and use the configured password (`admin` is the default).
