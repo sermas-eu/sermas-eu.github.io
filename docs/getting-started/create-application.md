@@ -40,6 +40,20 @@ To fix those errors, set ownership of CLI related folders to your current user. 
 sudo chown -R `id -u` ./apps ./data/cli
 ```
 
+#### Got stuck ?
+
+In case you got stuck and want to start over you can remove all the database and local data. 
+
+*This is a destructive operation and you will lose the data in the system*
+
+```sh
+docker compose down
+# Drop local database, e.g. applications
+docker volume rm sermas-toolkit-api_mongodb
+# Drop keycloack data, users and clients
+sudo rm data/keycloak -rf
+```
+
 ## Login with the admin user
 
 Use the following command and use the configured password (`admin` is the default).
