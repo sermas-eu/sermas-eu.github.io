@@ -23,7 +23,7 @@ The users can click on a generated model in the [3D Models](https://3d4xr.homela
 
  The web application provides an export option containing additional features developed to make the generated models even more suitable for XR applications. Specifically, the extra features focus on enhancing the quality of mesh geometry (Re-meshing), reducing the number of 3D model faces while preserving visual consistency (Simplification), accelerating the rendering process (LODs generation), and providing a range of commonly used formats (Export Options).
 
-The described features are implemented as a part of a single endpoint available in the URL: https://3d4xr.homelab.up2metric.com/api/lods/export-model/.
+The described features are implemented as a part of a single endpoint available in the URL: https://3d4xr.homelab.up2metric.com/api/lods/export-model/. The response content is a binary file in the specified output format, which can be directly saved.
 
 | Parameter | Value type | Description | Default value |
 |-----------|-----------|--------------|--------------|
