@@ -16,6 +16,14 @@ $ sermas-cli app save /apps/myapp
 ```bash
 $ sermas-cli app admin import /apps/myapp
 ```
+In case you're still experiencing problems opening the app, you can try clearing the data and restarting the services with:
+
+```
+docker compose down
+docker volume rm sermas-toolkit-api_mongodb
+sudo rm -r ./apps/myapp ./data/keycloak ./data/mongodb ./data/minio
+docker compose up -d
+```
 
 ## MQTT connection errors
 
