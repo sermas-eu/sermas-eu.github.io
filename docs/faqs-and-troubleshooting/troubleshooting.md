@@ -11,11 +11,11 @@ If your app is not listed in the Kiosk, be sure that the app is public: the conf
 
 Then, save it
 ```bash
-$ sermas-cli app save /apps/myapp
+sermas-cli app save /apps/myapp
 ```
  or import it again, if saving the app fails.
 ```bash
-$ sermas-cli app admin import /apps/myapp
+sermas-cli app admin import /apps/myapp
 ```
 
 ## Error opening an app
@@ -28,10 +28,12 @@ If you see this kind of error when opening an app, you should try saving it
 
 In case you're still experiencing problems opening the app, you can try clearing the data and restarting the services with:
 
-```
-docker compose down
-docker volume rm sermas-toolkit-api_mongodb
+```bash
+# stop containers and remove volumes
+docker compose down -v
+# remove locally stored data, if any
 sudo rm -r ./apps/myapp ./data/keycloak ./data/mongodb ./data/minio
+# restart the services
 docker compose up -d
 ```
 
