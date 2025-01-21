@@ -47,11 +47,10 @@ In case you got stuck and want to start over you can remove all the database and
 *This is a destructive operation and you will lose the data in the system*
 
 ```sh
-docker compose down
-# Drop local database, e.g. applications
-docker volume rm sermas-toolkit-api_mongodb
-# Drop keycloack data, users and clients
-sudo rm data/keycloak -rf
+# stop all the services and remove related volumes
+docker compose down -v
+# remove all local data
+sudo rm -rf ./data && git restore ./data
 ```
 
 ## Login with the admin user

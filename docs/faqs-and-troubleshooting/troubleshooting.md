@@ -29,10 +29,10 @@ If you see this kind of error when opening an app, you should try saving it
 In case you're still experiencing problems opening the app, you can try clearing the data and restarting the services with:
 
 ```bash
-# stop containers and remove volumes
+# stop all the services and remove related volumes
 docker compose down -v
-# remove locally stored data, if any
-sudo rm -r ./apps/myapp ./data/keycloak ./data/mongodb ./data/minio
+# remove all local data
+sudo rm -rf ./data && git restore ./data
 # restart the services
 docker compose up -d
 ```
