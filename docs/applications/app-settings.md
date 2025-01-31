@@ -27,9 +27,6 @@ language: en-GB
 # skip welcome message on interaction start
 skipWelcomeMessage: true
 
-# disable generated responses on tools matching
-skipToolResponse: true
-
 # define a prompt for the application, used as main context for the interaction
 prompt:
   text: <application context prompt>
