@@ -11,7 +11,8 @@ A website can be imported by adding the link to the [Repository configuration](.
 ```yaml
   rag:
     websites:
-      - {website link}
+      - url: {website base URL}
+        filterPaths: [] # list of sub paths to exclude
       - ...
 ```
 and importing the applications adding the flag `-iw`, for example:
