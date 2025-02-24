@@ -19,3 +19,11 @@ Then import the application adding the `-iw` flag, for example:
 ```bash
 sermas-cli app admin import -iw /apps/myapp
 ```
+The crawler will scrap the pages found using the sitemap. The sitemap will be searched on these  subpaths:
+```
+'/sitemap.xml',
+'/sitemap_index.xml'
+'/sitemapindex.xml'
+'/sitemap.php'
+'/sitemap.txt'
+```
