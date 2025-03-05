@@ -29,6 +29,12 @@ cd sermas-toolkit-api
 To use the Avatar capabilities (such as text to speech, speech to text, embeddings and chatting) we  need to set an [OpenAI Api Key](https://platform.openai.com/api-keys). The toolkit supports also other options (such as Google services and open-source based models) but to ease the process, we will start with this.
 
 
+Create a copy of `./config/api/.env.example` to `./config/api/.env`
+
+```sh
+cp ./config/api/.env.example ./config/api/.env
+```
+
 Edit `./config/api/.env` and set the variable `OPENAI_API_KEY` with the OpenAI obtained key.
 
 ```env

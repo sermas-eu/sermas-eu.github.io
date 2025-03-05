@@ -48,7 +48,7 @@ In case you got stuck and want to start over you can remove all the database and
 
 ```sh
 # stop all the services and remove related volumes
-docker compose down -v
+docker compose down --volumes
 # remove all local data
 sudo rm -rf ./data && git restore ./data
 ```
