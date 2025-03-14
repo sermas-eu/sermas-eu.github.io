@@ -59,6 +59,7 @@ http://mysermas.com, https://mysermas.com {
 
 }
 ```
+> NOTE: Depending on your TLS setup, you might need to specify also a [tls directive](https://caddyserver.com/docs/caddyfile/directives/tls). 
 
 ### Expose ports 80 and 443
 Add the following lines to the `proxy` service of your `docker-compose.yml` file,
