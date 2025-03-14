@@ -41,6 +41,11 @@ http://mysermas.com, https://mysermas.com {
     level debug
   }
 
+  route /mqtt* {
+    uri strip_prefix /mqtt
+    reverse_proxy mqtt:1884
+  }
+
   route /.well-known/sermas.json {
     rewrite /.well-known/sermas.json /api/.well-known/sermas.json
   }
