@@ -78,6 +78,17 @@ so that the traffic entering ports 80 and 443 reaches Caddy:
       - 443:443
 ```
 
+### Persist Proxy Data
+If you are using *Letsencrypt* or another similar services, you need to persist
+the SSL server certificate between container restarts. 
+In order to do so, add the following volume to the `proxy` service of your `docker-compose.yml` file:
+```yaml
+  proxy:
+    # ...
+    volumes:
+      - ./data/caddy:/data
+```
+
 ### Update URLs
 Add the following lines to the `api` and `kiosk` services:
 ```yaml
