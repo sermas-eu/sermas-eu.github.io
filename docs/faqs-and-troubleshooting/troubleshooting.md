@@ -40,3 +40,10 @@ docker compose up -d
 ## MQTT connection errors
 
 If you notice MQTT connection errors in the logs (like `token expired` or similar), please get the container IDs running `docker ps`, then restart the MQTT service, followed by any other disconnecting service using `docker restart [CONTAINER_ID]`.
+
+
+## Hallucinations and inference errors
+
+In case of (random) chat hallucinations or tools inference errors, 
+please try to lower the `LLM_TEMPERATURE` **or** the `LLM_TOP_P`
+parameters in the api `.env` file.

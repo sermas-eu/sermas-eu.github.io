@@ -164,6 +164,14 @@ Service for Text to Speech (default: `openai`)
 
 default LLM service to use (supported: openai, groq, ollama) (default: `openai`)
 
+#### LLM_TEMPERATURE 
+
+temperature setting of the LLM inference. Default to 1.0. Range 0.0 to infinity (theoretically)
+
+#### LLM_TOP_P 
+
+only the most probable tokens which cumulative probability reaches top_p are used for next token sampling. Default to 1.0. Range 0.0 to 1.0
+
 #### LLM_PRINT_PROMPT 
 
 Print prompts to console for debug purposes (default: `0`)
