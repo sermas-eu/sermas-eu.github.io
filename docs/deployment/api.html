@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.6.1">
 <title data-rh="true">API variables | SERMAS</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://sermas-eu.github.io/img/sermas-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://sermas-eu.github.io/img/sermas-social-card.jpg"><meta data-rh="true" property="og:url" content="https://sermas-eu.github.io/docs/deployment/api"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="API variables | SERMAS"><meta data-rh="true" name="description" content="The Toolkit API can be configured using different sets of environment variables"><meta data-rh="true" property="og:description" content="The Toolkit API can be configured using different sets of environment variables"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://sermas-eu.github.io/docs/deployment/api"><link data-rh="true" rel="alternate" href="https://sermas-eu.github.io/docs/deployment/api" hreflang="en"><link data-rh="true" rel="alternate" href="https://sermas-eu.github.io/docs/deployment/api" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.0d4ce184.css">
-<script src="/assets/js/runtime~main.6a52bfa9.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.78c52858.js" defer="defer"></script>
 <script src="/assets/js/main.22f23bfd.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -82,6 +82,10 @@
 <p>Service for Text to Speech (default: <code>openai</code>)</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="llm_service">LLM_SERVICE<a href="#llm_service" class="hash-link" aria-label="Direct link to LLM_SERVICE" title="Direct link to LLM_SERVICE">​</a></h4>
 <p>default LLM service to use (supported: openai, groq, ollama) (default: <code>openai</code>)</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="llm_temperature">LLM_TEMPERATURE<a href="#llm_temperature" class="hash-link" aria-label="Direct link to LLM_TEMPERATURE" title="Direct link to LLM_TEMPERATURE">​</a></h4>
+<p>temperature setting of the LLM inference. Default to 1.0. Range 0.0 to infinity (theoretically)</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="llm_top_p">LLM_TOP_P<a href="#llm_top_p" class="hash-link" aria-label="Direct link to LLM_TOP_P" title="Direct link to LLM_TOP_P">​</a></h4>
+<p>only the most probable tokens which cumulative probability reaches top_p are used for next token sampling. Default to 1.0. Range 0.0 to 1.0</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="llm_print_prompt">LLM_PRINT_PROMPT<a href="#llm_print_prompt" class="hash-link" aria-label="Direct link to LLM_PRINT_PROMPT" title="Direct link to LLM_PRINT_PROMPT">​</a></h4>
 <p>Print prompts to console for debug purposes (default: <code>0</code>)</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="llm_embeddings_service">LLM_EMBEDDINGS_SERVICE<a href="#llm_embeddings_service" class="hash-link" aria-label="Direct link to LLM_EMBEDDINGS_SERVICE" title="Direct link to LLM_EMBEDDINGS_SERVICE">​</a></h4>
