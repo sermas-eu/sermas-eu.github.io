@@ -23,6 +23,8 @@ The list of supported providers follows
 - [mistral](./mistral)
 - [ollama](./ollama)
 - [openai](./openai)
+- [vertexai](./vertexai)
+- [gcp_mistral](./gcp_mistral)
 
 Those can be configured in the API `.env` and the used in an application configuration.
 
