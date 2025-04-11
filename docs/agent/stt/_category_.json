@@ -1,0 +1,8 @@
+{
+  "label": "Speech-to-text configuration",
+  "position": 0.0000012,
+  "link": {
+    "type": "generated-index",
+    "description": "How to configure STT"
+  }
+}
