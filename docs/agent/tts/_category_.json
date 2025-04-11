@@ -1,0 +1,8 @@
+{
+  "label": "Text-to-speech configuration",
+  "position": 0.0000014,
+  "link": {
+    "type": "generated-index",
+    "description": "How to configure TTS for avatars"
+  }
+}
