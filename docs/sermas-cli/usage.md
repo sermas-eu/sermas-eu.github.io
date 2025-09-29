@@ -16,9 +16,13 @@ sidebar_position: 20
 
   - <a href="#sermas-cli--app--admin--remove">Delete applications</a>
 
+  - <a href="#sermas-cli--app--batch">Run chats in batch to validate interactions</a>
+
   - <a href="#sermas-cli--app--chat">Chat with an agent</a>
 
   - <a href="#sermas-cli--app--init">Create a new application structure</a>
+
+  - <a href="#sermas-cli--app--list">List user applications</a>
 
   - <a href="#sermas-cli--app--remove">Delete an application</a>
 
@@ -61,6 +65,9 @@ sidebar_position: 20
   - <a href="#sermas-cli--session--history">Retrieve a chat history by session ID</a>
 
   - <a href="#sermas-cli--session--search">Retrieve a chat history by app ID</a>
+- <a href="#sermas-cli--stats">Stats for the sermas api</a>
+
+  - <a href="#sermas-cli--stats--get">Get stats</a>
 
 ### Manage and interact with the SERMAS Toolkit API
 `sermas-cli [options] [command]`
@@ -74,6 +81,7 @@ sidebar_position: 20
 
 
 #### Commands:
+- `stats [options]` stats for the sermas api
 - `session` handle sessions
 - `platform` manage platform
 - `dialogue` interact with dialogue models
@@ -87,12 +95,14 @@ sidebar_position: 20
 
 #### Commands:
 - `update <path>` Update an new application
-- `sub <topic...>` Subscribe to a topic
 - `select [appId]` Select an application
+- `sub <topic...>` Subscribe to a topic
 - `save [options] [name]` Create a new application
 - `remove [options] [appId]` Delete an application
+- `list` List user applications
 - `init [options] <path>` Create a new application structure
-- `chat [options] [appId] [sessionId]` Chat with an agent
+- `chat [options] [appId]` Chat with an agent
+- `batch [options] [path]` Run chats in batch to validate interactions
 - `token` manage applications token
 - `admin` administer applications
 
@@ -134,18 +144,30 @@ sidebar_position: 20
 #### Arguments:
 - `appId` Applications ID
 
+### <a name="sermas-cli--app--batch"></a>Run chats in batch to validate interactions
+`sermas-cli app batch [options] [path]`
+
+#### Arguments:
+- `path` Path to load chat definitions
+
+
+#### Options:
+- `-n, --name <string...>` Name of the batch to run (can be repeated)
+- `-o, --output <string>` Output path where to store results
+- `-f, --only-failed` Store only failed results
+- `-s, --show-chat` Show chat messages
+- `-p, --parallelize <number>` Parallelize tests (default: 1)
+
 ### <a name="sermas-cli--app--chat"></a>Chat with an agent
-`sermas-cli app chat [options] [appId] [sessionId]`
+`sermas-cli app chat [options] [appId]`
 
 #### Arguments:
 - `appId` Reference to an application or the selected one will be used
-- `sessionId` A session ID to reuse or a new one is created
 
 
 #### Options:
 - `-l, --language [language]` Language used in the format `en-US` (choices: &quot;es-ES&quot;, &quot;pt-PT&quot;, &quot;it-IT&quot;, &quot;de-DE&quot;, &quot;en-GB&quot;, &quot;fr-FR&quot;, default: &quot;en-GB&quot;)
-- `-g, --gender [gender]` Gender of the avatar (used by TTS) (choices: &quot;F&quot;, &quot;M&quot;, &quot;X&quot;, default: &quot;F&quot;)
-- `-m, --llm [llm]` LLM model to use (default: &quot;chatgpt&quot;)
+- `-m, --message [message]` Message to send to the avatar
 
 ### <a name="sermas-cli--app--init"></a>Create a new application structure
 `sermas-cli app init [options] <path>`
@@ -157,6 +179,8 @@ sidebar_position: 20
 #### Options:
 - `-f, --force` Force creation, overwriting the directory if it exists
 
+### <a name="sermas-cli--app--list"></a>List user applications
+`sermas-cli app list [options]`
 ### <a name="sermas-cli--app--remove"></a>Delete an application
 `sermas-cli app remove [options] [appId]`
 
@@ -299,5 +323,22 @@ sidebar_position: 20
 - `--from [from]` From date
 - `--to [to]` To date
 - `-d, --dump [path]` Export session contents as yaml files to path
+- `-s, --stats` Export also stats as yaml, depends on --dump
 - `-f, --dump-format [format]` history format (raw or simple). Default to simple (default: &quot;simple&quot;)
+- `-s, --skip-empty` skip empty session, where the user has not interacted. default true (default: true)
 - `-p, --print` print history to screen (default: false)
+
+### <a name="sermas-cli--stats"></a>Stats for the sermas api
+`sermas-cli stats [options] [command]`
+
+#### Options:
+- `--since <iso_datetime|timestamp_in_ms|interval_string>` collect stats since this UTC moment. Also accepts XX[d|h|m|s] intervals like &#039;10m&#039;, &#039;30s&#039;, etc. (default: &quot;60s&quot;)
+- `--until <iso_datetime|timestamp_in_ms>` collect stats until this UTC moment. Defaults to now.
+- `--output-file <file_path>` Save stats in this CSV file
+
+
+#### Commands:
+- `get` get stats
+
+### <a name="sermas-cli--stats--get"></a>Get stats
+`sermas-cli stats get [options]`
