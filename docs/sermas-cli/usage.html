@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.6.1">
 <title data-rh="true">Usage | SERMAS</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://sermas-eu.github.io/img/sermas-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://sermas-eu.github.io/img/sermas-social-card.jpg"><meta data-rh="true" property="og:url" content="https://sermas-eu.github.io/docs/sermas-cli/usage"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Usage | SERMAS"><meta data-rh="true" name="description" content="- SERMAS CLI overview"><meta data-rh="true" property="og:description" content="- SERMAS CLI overview"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://sermas-eu.github.io/docs/sermas-cli/usage"><link data-rh="true" rel="alternate" href="https://sermas-eu.github.io/docs/sermas-cli/usage" hreflang="en"><link data-rh="true" rel="alternate" href="https://sermas-eu.github.io/docs/sermas-cli/usage" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.0d4ce184.css">
-<script src="/assets/js/runtime~main.04fb9955.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.ad39fe45.js" defer="defer"></script>
 <script src="/assets/js/main.8a2adb91.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -29,10 +29,16 @@
 <a href="#sermas-cli--app--admin--remove">Delete applications</a>
 </li>
 <li>
+<a href="#sermas-cli--app--batch">Run chats in batch to validate interactions</a>
+</li>
+<li>
 <a href="#sermas-cli--app--chat">Chat with an agent</a>
 </li>
 <li>
 <a href="#sermas-cli--app--init">Create a new application structure</a>
+</li>
+<li>
+<a href="#sermas-cli--app--list">List user applications</a>
 </li>
 <li>
 <a href="#sermas-cli--app--remove">Delete an application</a>
@@ -113,6 +119,14 @@
 </li>
 </ul>
 </li>
+<li>
+<a href="#sermas-cli--stats">Stats for the sermas api</a>
+<ul>
+<li>
+<a href="#sermas-cli--stats--get">Get stats</a>
+</li>
+</ul>
+</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="manage-and-interact-with-the-sermas-toolkit-api">Manage and interact with the SERMAS Toolkit API<a href="#manage-and-interact-with-the-sermas-toolkit-api" class="hash-link" aria-label="Direct link to Manage and interact with the SERMAS Toolkit API" title="Direct link to Manage and interact with the SERMAS Toolkit API">​</a></h3>
 <p><code>sermas-cli [options] [command]</code></p>
@@ -126,6 +140,7 @@
 </ul>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="commands">Commands:<a href="#commands" class="hash-link" aria-label="Direct link to Commands:" title="Direct link to Commands:">​</a></h4>
 <ul>
+<li><code>stats [options]</code> stats for the sermas api</li>
 <li><code>session</code> handle sessions</li>
 <li><code>platform</code> manage platform</li>
 <li><code>dialogue</code> interact with dialogue models</li>
@@ -139,12 +154,14 @@
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="commands-1">Commands:<a href="#commands-1" class="hash-link" aria-label="Direct link to Commands:" title="Direct link to Commands:">​</a></h4>
 <ul>
 <li><code>update &lt;path&gt;</code> Update an new application</li>
-<li><code>sub &lt;topic...&gt;</code> Subscribe to a topic</li>
 <li><code>select [appId]</code> Select an application</li>
+<li><code>sub &lt;topic...&gt;</code> Subscribe to a topic</li>
 <li><code>save [options] [name]</code> Create a new application</li>
 <li><code>remove [options] [appId]</code> Delete an application</li>
+<li><code>list</code> List user applications</li>
 <li><code>init [options] &lt;path&gt;</code> Create a new application structure</li>
-<li><code>chat [options] [appId] [sessionId]</code> Chat with an agent</li>
+<li><code>chat [options] [appId]</code> Chat with an agent</li>
+<li><code>batch [options] [path]</code> Run chats in batch to validate interactions</li>
 <li><code>token</code> manage applications token</li>
 <li><code>admin</code> administer applications</li>
 </ul>
@@ -186,58 +203,72 @@
 <ul>
 <li><code>appId</code> Applications ID</li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="chat-with-an-agent"><a name="sermas-cli--app--chat"></a>Chat with an agent<a href="#chat-with-an-agent" class="hash-link" aria-label="Direct link to chat-with-an-agent" title="Direct link to chat-with-an-agent">​</a></h3>
-<p><code>sermas-cli app chat [options] [appId] [sessionId]</code></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="run-chats-in-batch-to-validate-interactions"><a name="sermas-cli--app--batch"></a>Run chats in batch to validate interactions<a href="#run-chats-in-batch-to-validate-interactions" class="hash-link" aria-label="Direct link to run-chats-in-batch-to-validate-interactions" title="Direct link to run-chats-in-batch-to-validate-interactions">​</a></h3>
+<p><code>sermas-cli app batch [options] [path]</code></p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-3">Arguments:<a href="#arguments-3" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
 <ul>
-<li><code>appId</code> Reference to an application or the selected one will be used</li>
-<li><code>sessionId</code> A session ID to reuse or a new one is created</li>
+<li><code>path</code> Path to load chat definitions</li>
 </ul>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="options-3">Options:<a href="#options-3" class="hash-link" aria-label="Direct link to Options:" title="Direct link to Options:">​</a></h4>
 <ul>
-<li><code>-l, --language [language]</code> Language used in the format <code>en-US</code> (choices: &quot;es-ES&quot;, &quot;pt-PT&quot;, &quot;it-IT&quot;, &quot;de-DE&quot;, &quot;en-GB&quot;, &quot;fr-FR&quot;, default: &quot;en-GB&quot;)</li>
-<li><code>-g, --gender [gender]</code> Gender of the avatar (used by TTS) (choices: &quot;F&quot;, &quot;M&quot;, &quot;X&quot;, default: &quot;F&quot;)</li>
-<li><code>-m, --llm [llm]</code> LLM model to use (default: &quot;chatgpt&quot;)</li>
+<li><code>-n, --name &lt;string...&gt;</code> Name of the batch to run (can be repeated)</li>
+<li><code>-o, --output &lt;string&gt;</code> Output path where to store results</li>
+<li><code>-f, --only-failed</code> Store only failed results</li>
+<li><code>-s, --show-chat</code> Show chat messages</li>
+<li><code>-p, --parallelize &lt;number&gt;</code> Parallelize tests (default: 1)</li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="create-a-new-application-structure"><a name="sermas-cli--app--init"></a>Create a new application structure<a href="#create-a-new-application-structure" class="hash-link" aria-label="Direct link to create-a-new-application-structure" title="Direct link to create-a-new-application-structure">​</a></h3>
-<p><code>sermas-cli app init [options] &lt;path&gt;</code></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="chat-with-an-agent"><a name="sermas-cli--app--chat"></a>Chat with an agent<a href="#chat-with-an-agent" class="hash-link" aria-label="Direct link to chat-with-an-agent" title="Direct link to chat-with-an-agent">​</a></h3>
+<p><code>sermas-cli app chat [options] [appId]</code></p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-4">Arguments:<a href="#arguments-4" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
 <ul>
-<li><code>path</code> Destination path</li>
+<li><code>appId</code> Reference to an application or the selected one will be used</li>
 </ul>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="options-4">Options:<a href="#options-4" class="hash-link" aria-label="Direct link to Options:" title="Direct link to Options:">​</a></h4>
 <ul>
+<li><code>-l, --language [language]</code> Language used in the format <code>en-US</code> (choices: &quot;es-ES&quot;, &quot;pt-PT&quot;, &quot;it-IT&quot;, &quot;de-DE&quot;, &quot;en-GB&quot;, &quot;fr-FR&quot;, default: &quot;en-GB&quot;)</li>
+<li><code>-m, --message [message]</code> Message to send to the avatar</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="create-a-new-application-structure"><a name="sermas-cli--app--init"></a>Create a new application structure<a href="#create-a-new-application-structure" class="hash-link" aria-label="Direct link to create-a-new-application-structure" title="Direct link to create-a-new-application-structure">​</a></h3>
+<p><code>sermas-cli app init [options] &lt;path&gt;</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-5">Arguments:<a href="#arguments-5" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
+<ul>
+<li><code>path</code> Destination path</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="options-5">Options:<a href="#options-5" class="hash-link" aria-label="Direct link to Options:" title="Direct link to Options:">​</a></h4>
+<ul>
 <li><code>-f, --force</code> Force creation, overwriting the directory if it exists</li>
 </ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="list-user-applications"><a name="sermas-cli--app--list"></a>List user applications<a href="#list-user-applications" class="hash-link" aria-label="Direct link to list-user-applications" title="Direct link to list-user-applications">​</a></h3>
+<p><code>sermas-cli app list [options]</code></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="delete-an-application"><a name="sermas-cli--app--remove"></a>Delete an application<a href="#delete-an-application" class="hash-link" aria-label="Direct link to delete-an-application" title="Direct link to delete-an-application">​</a></h3>
 <p><code>sermas-cli app remove [options] [appId]</code></p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-5">Arguments:<a href="#arguments-5" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-6">Arguments:<a href="#arguments-6" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
 <ul>
 <li><code>appId</code> Application ID</li>
 </ul>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="options-5">Options:<a href="#options-5" class="hash-link" aria-label="Direct link to Options:" title="Direct link to Options:">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="options-6">Options:<a href="#options-6" class="hash-link" aria-label="Direct link to Options:" title="Direct link to Options:">​</a></h4>
 <ul>
 <li><code>--public</code> Save credentials locally</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="create-a-new-application"><a name="sermas-cli--app--save"></a>Create a new application<a href="#create-a-new-application" class="hash-link" aria-label="Direct link to create-a-new-application" title="Direct link to create-a-new-application">​</a></h3>
 <p><code>sermas-cli app save [options] [name]</code></p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-6">Arguments:<a href="#arguments-6" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-7">Arguments:<a href="#arguments-7" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
 <ul>
 <li><code>name</code> Application name</li>
 </ul>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="options-6">Options:<a href="#options-6" class="hash-link" aria-label="Direct link to Options:" title="Direct link to Options:">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="options-7">Options:<a href="#options-7" class="hash-link" aria-label="Direct link to Options:" title="Direct link to Options:">​</a></h4>
 <ul>
 <li><code>--public</code> Expose as a public application</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="select-an-application"><a name="sermas-cli--app--select"></a>Select an application<a href="#select-an-application" class="hash-link" aria-label="Direct link to select-an-application" title="Direct link to select-an-application">​</a></h3>
 <p><code>sermas-cli app select [options] [appId]</code></p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-7">Arguments:<a href="#arguments-7" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-8">Arguments:<a href="#arguments-8" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
 <ul>
 <li><code>appId</code> Application ID</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="subscribe-to-a-topic"><a name="sermas-cli--app--sub"></a>Subscribe to a topic<a href="#subscribe-to-a-topic" class="hash-link" aria-label="Direct link to subscribe-to-a-topic" title="Direct link to subscribe-to-a-topic">​</a></h3>
 <p><code>sermas-cli app sub [options] &lt;topic...&gt;</code></p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-8">Arguments:<a href="#arguments-8" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-9">Arguments:<a href="#arguments-9" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
 <ul>
 <li><code>topic</code> The topic(s) to subscribe in the form &#x27;app/&lt;appId&gt;/resource/scope[/more]&#x27;. Specify more topics separated by space. Wildcard are supported.</li>
 </ul>
@@ -251,7 +282,7 @@
 <p><code>sermas-cli app token get [options]</code></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="update-an-new-application"><a name="sermas-cli--app--update"></a>Update an new application<a href="#update-an-new-application" class="hash-link" aria-label="Direct link to update-an-new-application" title="Direct link to update-an-new-application">​</a></h3>
 <p><code>sermas-cli app update [options] &lt;path&gt;</code></p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-9">Arguments:<a href="#arguments-9" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-10">Arguments:<a href="#arguments-10" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
 <ul>
 <li><code>path</code> a JSON with one or more application definition</li>
 </ul>
@@ -272,18 +303,18 @@
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="import-users"><a name="sermas-cli--auth--admin--import"></a>Import users<a href="#import-users" class="hash-link" aria-label="Direct link to import-users" title="Direct link to import-users">​</a></h3>
 <p><code>sermas-cli auth admin import [options] &lt;file&gt;</code></p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-10">Arguments:<a href="#arguments-10" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-11">Arguments:<a href="#arguments-11" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
 <ul>
 <li><code>file</code> A file with the list of users to import</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="login-and-obtain-user-credentials"><a name="sermas-cli--auth--login"></a>Login and obtain user credentials<a href="#login-and-obtain-user-credentials" class="hash-link" aria-label="Direct link to login-and-obtain-user-credentials" title="Direct link to login-and-obtain-user-credentials">​</a></h3>
 <p><code>sermas-cli auth login [options] [username] [password]</code></p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-11">Arguments:<a href="#arguments-11" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-12">Arguments:<a href="#arguments-12" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
 <ul>
 <li><code>username</code> Your username</li>
 <li><code>password</code> Your password</li>
 </ul>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="options-7">Options:<a href="#options-7" class="hash-link" aria-label="Direct link to Options:" title="Direct link to Options:">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="options-8">Options:<a href="#options-8" class="hash-link" aria-label="Direct link to Options:" title="Direct link to Options:">​</a></h4>
 <ul>
 <li><code>--saveLocally</code> Save credentials locally</li>
 </ul>
@@ -291,7 +322,7 @@
 <p><code>sermas-cli auth token [options]</code></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="show-the-user-jwt-information"><a name="sermas-cli--auth--whoami"></a>Show the user JWT information<a href="#show-the-user-jwt-information" class="hash-link" aria-label="Direct link to show-the-user-jwt-information" title="Direct link to show-the-user-jwt-information">​</a></h3>
 <p><code>sermas-cli auth whoami [options]</code></p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="options-8">Options:<a href="#options-8" class="hash-link" aria-label="Direct link to Options:" title="Direct link to Options:">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="options-9">Options:<a href="#options-9" class="hash-link" aria-label="Direct link to Options:" title="Direct link to Options:">​</a></h4>
 <ul>
 <li><code>--token</code> Return the JWT token</li>
 </ul>
@@ -313,7 +344,7 @@
 <ul>
 <li><code>module</code> manage platform modules</li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="manage-platform-modules"><a name="sermas-cli--platform--module"></a>Manage platform modules<a href="#manage-platform-modules" class="hash-link" aria-label="Direct link to manage-platform-modules" title="Direct link to manage-platform-modules"> ​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="manage-platform-modules"><a name="sermas-cli--platform--module"></a>Manage platform modules<a href="#manage-platform-modules" class="hash-link" aria-label="Direct link to manage-platform-modules" title="Direct link to manage-platform-modules">​</a></h3>
 <p><code>sermas-cli platform module [options] [command]</code></p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="commands-8">Commands:<a href="#commands-8" class="hash-link" aria-label="Direct link to Commands:" title="Direct link to Commands:">​</a></h4>
 <ul>
@@ -321,7 +352,7 @@
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="add-or-update-a-platform-module"><a name="sermas-cli--platform--module--add"></a>Add or update a platform module<a href="#add-or-update-a-platform-module" class="hash-link" aria-label="Direct link to add-or-update-a-platform-module" title="Direct link to add-or-update-a-platform-module">​</a></h3>
 <p><code>sermas-cli platform module add [options] [openapiSpec]</code></p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-12">Arguments:<a href="#arguments-12" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-13">Arguments:<a href="#arguments-13" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
 <ul>
 <li><code>openapiSpec</code> Module Open API specification URL</li>
 </ul>
@@ -334,25 +365,41 @@
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="retrieve-a-chat-history-by-session-id"><a name="sermas-cli--session--history"></a>Retrieve a chat history by session ID<a href="#retrieve-a-chat-history-by-session-id" class="hash-link" aria-label="Direct link to retrieve-a-chat-history-by-session-id" title="Direct link to retrieve-a-chat-history-by-session-id">​</a></h3>
 <p><code>sermas-cli session history [options] [appId] [sessionId]</code></p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-13">Arguments:<a href="#arguments-13" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-14">Arguments:<a href="#arguments-14" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
 <ul>
 <li><code>appId</code> The appId reference</li>
 <li><code>sessionId</code> The sessionId to retrieve</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="retrieve-a-chat-history-by-app-id"><a name="sermas-cli--session--search"></a>Retrieve a chat history by app ID<a href="#retrieve-a-chat-history-by-app-id" class="hash-link" aria-label="Direct link to retrieve-a-chat-history-by-app-id" title="Direct link to retrieve-a-chat-history-by-app-id">​</a></h3>
 <p><code>sermas-cli session search [options] [appId]</code></p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-14">Arguments:<a href="#arguments-14" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="arguments-15">Arguments:<a href="#arguments-15" class="hash-link" aria-label="Direct link to Arguments:" title="Direct link to Arguments:">​</a></h4>
 <ul>
 <li><code>appId</code> The appId reference</li>
 </ul>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="options-9">Options:<a href="#options-9" class="hash-link" aria-label="Direct link to Options:" title="Direct link to Options:">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="options-10">Options:<a href="#options-10" class="hash-link" aria-label="Direct link to Options:" title="Direct link to Options:">​</a></h4>
 <ul>
 <li><code>-l, --limit [limit]</code> Limit the number of results. Defaults to 10 (default: &quot;10&quot;)</li>
 <li><code>--from [from]</code> From date</li>
 <li><code>--to [to]</code> To date</li>
 <li><code>-d, --dump [path]</code> Export session contents as yaml files to path</li>
+<li><code>-s, --stats</code> Export also stats as yaml, depends on --dump</li>
 <li><code>-f, --dump-format [format]</code> history format (raw or simple). Default to simple (default: &quot;simple&quot;)</li>
+<li><code>-s, --skip-empty</code> skip empty session, where the user has not interacted. default true (default: true)</li>
 <li><code>-p, --print</code> print history to screen (default: false)</li>
-</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/sermas-eu/sermas-eu.github.io/sidebar.ts/docs/sermas-cli/usage.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/sermas-cli/setup"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Setup</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/category/ros-proxy"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">ROS Proxy</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#manage-and-interact-with-the-sermas-toolkit-api" class="table-of-contents__link toc-highlight">Manage and interact with the SERMAS Toolkit API</a></li><li><a href="#manage-applications" class="table-of-contents__link toc-highlight"><a></a>Manage applications</a></li><li><a href="#administer-applications" class="table-of-contents__link toc-highlight"><a></a>Administer applications</a></li><li><a href="#export-applications" class="table-of-contents__link toc-highlight"><a></a>Export applications</a></li><li><a href="#import-applications" class="table-of-contents__link toc-highlight"><a></a>Import applications</a></li><li><a href="#delete-applications" class="table-of-contents__link toc-highlight"><a></a>Delete applications</a></li><li><a href="#chat-with-an-agent" class="table-of-contents__link toc-highlight"><a></a>Chat with an agent</a></li><li><a href="#create-a-new-application-structure" class="table-of-contents__link toc-highlight"><a></a>Create a new application structure</a></li><li><a href="#delete-an-application" class="table-of-contents__link toc-highlight"><a></a>Delete an application</a></li><li><a href="#create-a-new-application" class="table-of-contents__link toc-highlight"><a></a>Create a new application</a></li><li><a href="#select-an-application" class="table-of-contents__link toc-highlight"><a></a>Select an application</a></li><li><a href="#subscribe-to-a-topic" class="table-of-contents__link toc-highlight"><a></a>Subscribe to a topic</a></li><li><a href="#manage-applications-token" class="table-of-contents__link toc-highlight"><a></a>Manage applications token</a></li><li><a href="#retrieve-an-app-token" class="table-of-contents__link toc-highlight"><a></a>Retrieve an app token</a></li><li><a href="#update-an-new-application" class="table-of-contents__link toc-highlight"><a></a>Update an new application</a></li><li><a href="#handle-users-and-authentication" class="table-of-contents__link toc-highlight"><a></a>Handle users and authentication</a></li><li><a href="#manage-users" class="table-of-contents__link toc-highlight"><a></a>Manage users</a></li><li><a href="#import-users" class="table-of-contents__link toc-highlight"><a></a>Import users</a></li><li><a href="#login-and-obtain-user-credentials" class="table-of-contents__link toc-highlight"><a></a>Login and obtain user credentials</a></li><li><a href="#retrieve-a-user-token" class="table-of-contents__link toc-highlight"><a></a>Retrieve a user token</a></li><li><a href="#show-the-user-jwt-information" class="table-of-contents__link toc-highlight"><a></a>Show the user JWT information</a></li><li><a href="#generate-bash-completion" class="table-of-contents__link toc-highlight"><a></a>Generate bash completion</a></li><li><a href="#interact-with-dialogue-models" class="table-of-contents__link toc-highlight"><a></a>Interact with dialogue models</a></li><li><a href="#list-available-models" class="table-of-contents__link toc-highlight"><a></a>List available models</a></li><li><a href="#generate-markdown-documentation" class="table-of-contents__link toc-highlight"><a></a>Generate markdown documentation</a></li><li><a href="#manage-platform" class="table-of-contents__link toc-highlight"><a></a>Manage platform</a></li><li><a href="#manage-platform-modules" class="table-of-contents__link toc-highlight"><a></a>Manage platform modules</a></li><li><a href="#add-or-update-a-platform-module" class="table-of-contents__link toc-highlight"><a></a>Add or update a platform module</a></li><li><a href="#handle-sessions" class="table-of-contents__link toc-highlight"><a></a>Handle sessions</a></li><li><a href="#retrieve-a-chat-history-by-session-id" class="table-of-contents__link toc-highlight"><a></a>Retrieve a chat history by session ID</a></li><li><a href="#retrieve-a-chat-history-by-app-id" class="table-of-contents__link toc-highlight"><a></a>Retrieve a chat history by app ID</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/category/overview">Getting started</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://discord.gg/ek23WbVNBv" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/sermas" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/company/sermas-eu/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Linkedin<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://sermasproject.eu/" target="_blank" rel="noopener noreferrer" class="footer__link-item">About SERMAS Project<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/sermas-eu" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 SERMAS project. Built with Docusaurus.</div></div></div></footer></div>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="stats-for-the-sermas-api"><a name="sermas-cli--stats"></a>Stats for the sermas api<a href="#stats-for-the-sermas-api" class="hash-link" aria-label="Direct link to stats-for-the-sermas-api" title="Direct link to stats-for-the-sermas-api">​</a></h3>
+<p><code>sermas-cli stats [options] [command]</code></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="options-11">Options:<a href="#options-11" class="hash-link" aria-label="Direct link to Options:" title="Direct link to Options:">​</a></h4>
+<ul>
+<li><code>--since &lt;iso_datetime|timestamp_in_ms|interval_string&gt;</code> collect stats since this UTC moment. Also accepts XX[d|h|m|s] intervals like &#x27;10m&#x27;, &#x27;30s&#x27;, etc. (default: &quot;60s&quot;)</li>
+<li><code>--until &lt;iso_datetime|timestamp_in_ms&gt;</code> collect stats until this UTC moment. Defaults to now.</li>
+<li><code>--output-file &lt;file_path&gt;</code> Save stats in this CSV file</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="commands-10">Commands:<a href="#commands-10" class="hash-link" aria-label="Direct link to Commands:" title="Direct link to Commands:">​</a></h4>
+<ul>
+<li><code>get</code> get stats</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="get-stats"><a name="sermas-cli--stats--get"></a>Get stats<a href="#get-stats" class="hash-link" aria-label="Direct link to get-stats" title="Direct link to get-stats">​</a></h3>
+<p><code>sermas-cli stats get [options]</code></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/sermas-eu/sermas-eu.github.io/sidebar.ts/docs/sermas-cli/usage.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/sermas-cli/setup"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Setup</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/category/ros-proxy"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">ROS Proxy</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#manage-and-interact-with-the-sermas-toolkit-api" class="table-of-contents__link toc-highlight">Manage and interact with the SERMAS Toolkit API</a></li><li><a href="#manage-applications" class="table-of-contents__link toc-highlight"><a></a>Manage applications</a></li><li><a href="#administer-applications" class="table-of-contents__link toc-highlight"><a></a>Administer applications</a></li><li><a href="#export-applications" class="table-of-contents__link toc-highlight"><a></a>Export applications</a></li><li><a href="#import-applications" class="table-of-contents__link toc-highlight"><a></a>Import applications</a></li><li><a href="#delete-applications" class="table-of-contents__link toc-highlight"><a></a>Delete applications</a></li><li><a href="#run-chats-in-batch-to-validate-interactions" class="table-of-contents__link toc-highlight"><a></a>Run chats in batch to validate interactions</a></li><li><a href="#chat-with-an-agent" class="table-of-contents__link toc-highlight"><a></a>Chat with an agent</a></li><li><a href="#create-a-new-application-structure" class="table-of-contents__link toc-highlight"><a></a>Create a new application structure</a></li><li><a href="#list-user-applications" class="table-of-contents__link toc-highlight"><a></a>List user applications</a></li><li><a href="#delete-an-application" class="table-of-contents__link toc-highlight"><a></a>Delete an application</a></li><li><a href="#create-a-new-application" class="table-of-contents__link toc-highlight"><a></a>Create a new application</a></li><li><a href="#select-an-application" class="table-of-contents__link toc-highlight"><a></a>Select an application</a></li><li><a href="#subscribe-to-a-topic" class="table-of-contents__link toc-highlight"><a></a>Subscribe to a topic</a></li><li><a href="#manage-applications-token" class="table-of-contents__link toc-highlight"><a></a>Manage applications token</a></li><li><a href="#retrieve-an-app-token" class="table-of-contents__link toc-highlight"><a></a>Retrieve an app token</a></li><li><a href="#update-an-new-application" class="table-of-contents__link toc-highlight"><a></a>Update an new application</a></li><li><a href="#handle-users-and-authentication" class="table-of-contents__link toc-highlight"><a></a>Handle users and authentication</a></li><li><a href="#manage-users" class="table-of-contents__link toc-highlight"><a></a>Manage users</a></li><li><a href="#import-users" class="table-of-contents__link toc-highlight"><a></a>Import users</a></li><li><a href="#login-and-obtain-user-credentials" class="table-of-contents__link toc-highlight"><a></a>Login and obtain user credentials</a></li><li><a href="#retrieve-a-user-token" class="table-of-contents__link toc-highlight"><a></a>Retrieve a user token</a></li><li><a href="#show-the-user-jwt-information" class="table-of-contents__link toc-highlight"><a></a>Show the user JWT information</a></li><li><a href="#generate-bash-completion" class="table-of-contents__link toc-highlight"><a></a>Generate bash completion</a></li><li><a href="#interact-with-dialogue-models" class="table-of-contents__link toc-highlight"><a></a>Interact with dialogue models</a></li><li><a href="#list-available-models" class="table-of-contents__link toc-highlight"><a></a>List available models</a></li><li><a href="#generate-markdown-documentation" class="table-of-contents__link toc-highlight"><a></a>Generate markdown documentation</a></li><li><a href="#manage-platform" class="table-of-contents__link toc-highlight"><a></a>Manage platform</a></li><li><a href="#manage-platform-modules" class="table-of-contents__link toc-highlight"><a></a>Manage platform modules</a></li><li><a href="#add-or-update-a-platform-module" class="table-of-contents__link toc-highlight"><a></a>Add or update a platform module</a></li><li><a href="#handle-sessions" class="table-of-contents__link toc-highlight"><a></a>Handle sessions</a></li><li><a href="#retrieve-a-chat-history-by-session-id" class="table-of-contents__link toc-highlight"><a></a>Retrieve a chat history by session ID</a></li><li><a href="#retrieve-a-chat-history-by-app-id" class="table-of-contents__link toc-highlight"><a></a>Retrieve a chat history by app ID</a></li><li><a href="#stats-for-the-sermas-api" class="table-of-contents__link toc-highlight"><a></a>Stats for the sermas api</a></li><li><a href="#get-stats" class="table-of-contents__link toc-highlight"><a></a>Get stats</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/category/overview">Getting started</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://discord.gg/ek23WbVNBv" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/sermas" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/company/sermas-eu/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Linkedin<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://sermasproject.eu/" target="_blank" rel="noopener noreferrer" class="footer__link-item">About SERMAS Project<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/sermas-eu" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 SERMAS project. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>
